@@ -61,16 +61,16 @@ class Page extends Adapter implements Searchable, Shareable
 		
 	// Activation start and end date of the page 
 	$acitvationDateColumns = array(1 => array('startDate' 	=> 'page_activation_start_date',
-											  'endDate'		=> 'page_activation_end_date'));
+						 'endDate'		=> 'page_activation_end_date'));
         
         $this->SetActivationDateColumns($acitvationDateColumns);
     }
 	
-	/*
-	 * Checks whether the page is homepage
-	 *
-	 * @params $pageID - int
-	 */
+    /*
+     * Checks whether the page is homepage
+     *
+     * @params $pageID - int
+     */
     public function isHomepage($pageID)
     {
         $q = 'SELECT CASE WHEN pt.page_type_description = "Homepage"
